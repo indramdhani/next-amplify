@@ -22,3 +22,4 @@ export async function getServerSideProps() {
         `SSR ran on ${formattedDate}. This will be logged in CloudWatch.`
     );
     return { props: { formattedDate } };
+}
