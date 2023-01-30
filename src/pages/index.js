@@ -1,11 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import { Inter } from '@next/font/google';
+import styles from '@/styles/Home.module.css';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
-export default function Home() {
+export default function Home({ formattedDate }) {
   return (
     <>
       <Head>
@@ -17,7 +17,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
           <p>
-            Get started by editing&nbsp;
+            Get started by editing&nbsp;. It was built on {formattedDate}
             <code className={styles.code}>src/pages/index.js</code>
           </p>
           <div>
@@ -119,5 +119,15 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
+}
+
+export async function getStaticProps() {
+  const buildDate = Date.now();
+  const formattedDate = new Intl.DateTimeFormat('en-US', {
+    dateStyle: 'long',
+    timeStyle: 'long'
+  }).format(buildDate);
+
+  return { props: { formattedDate } };
 }
