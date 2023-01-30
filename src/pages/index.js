@@ -17,7 +17,11 @@ export default function Home({ formattedDate }) {
       <main className={styles.main}>
         <div className={styles.description}>
           <p>
-            Get started by editing&nbsp;. It was built on {formattedDate}
+            This page is client-side rendered. It was rendered on {formattedDate}.
+            <a href="/ssr">View a ssr page.</a>
+          </p>
+          <p>
+            Get started by editing&nbsp;.
             <code className={styles.code}>src/pages/index.js</code>
           </p>
           <div>
