@@ -18,7 +18,7 @@ export default function Home({ formattedDate }) {
         <div className={styles.description}>
           <p>
             This page is client-side rendered. It was rendered on {formattedDate}.
-            <a href="/ssr">View a ssr page.</a>
+            <a href="/new-path/ssr">View a ssr page.</a>
           </p>
           <p>
             Get started by editing&nbsp;.
