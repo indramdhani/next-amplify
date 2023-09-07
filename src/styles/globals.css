@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @import url('https://use.typekit.net/xjx8wyu.css'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap'); */
+@import './font-faces.css';
+
+@font-face {
+  font-family: 'Sanchez';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://cdn.paperlust.co/assets/fonts/Sanchezregular.woff2)
+    format('woff2');
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,12 +29,34 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.pl-content-container {
+  @apply px-4;
+  @apply mx-auto;
+}
+
+@screen sm {
+}
+
+@screen md {
+  .pl-content-container {
+    width: 750px;
+  }
+}
+
+@screen lg {
+  .pl-content-container {
+    width: 970px;
+  }
+}
+
+@screen xl {
+  .pl-content-container {
+    width: 1170px;
+  }
 }
