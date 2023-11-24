@@ -1,7 +1,6 @@
 "use client";
 import { Inter } from 'next/font/google';
 import { Tldraw } from '@tldraw/tldraw';
-import '@tldraw/tldraw/tldraw.css';
 const inter = Inter({ subsets: ['latin'] });
 export default function Draw() {
     return (
